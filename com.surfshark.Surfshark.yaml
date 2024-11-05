@@ -9,9 +9,11 @@ sdk: org.gnome.Sdk
 command: surfshark
 separate-locales: false
 finish-args:
-  - --socket=fallback-x11
   # To support older Flatpak releases, specify both x11 and fallback-x11. The fallback-x11 option takes precedence when both are supported.
   # https://docs.flatpak.org/en/latest/flatpak-command-reference.html
+  # HOWEVER fails linting because of finish-args-contains-both-x11-and-fallback rule https://docs.flathub.org/docs/for-app-authors/linter
+  # thus commented out. App is not ready for default support of wayland
+  # - --socket=fallback-x11
   - --socket=x11
   - --share=ipc
   - --share=network
