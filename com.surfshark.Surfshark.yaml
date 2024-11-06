@@ -9,6 +9,11 @@ sdk: org.gnome.Sdk
 command: surfshark
 separate-locales: false
 finish-args:
+  # To support older Flatpak releases, specify both x11 and fallback-x11. The fallback-x11 option takes precedence when both are supported.
+  # https://docs.flatpak.org/en/latest/flatpak-command-reference.html
+  # HOWEVER fails linting because of finish-args-contains-both-x11-and-fallback rule https://docs.flathub.org/docs/for-app-authors/linter
+  # thus commented out. App is not ready for default support of wayland yet
+  # - --socket=fallback-x11
   - --socket=x11
   - --share=ipc
   - --share=network
@@ -119,8 +124,9 @@ modules:
       - type: script
         dest-filename: surfshark
         commands:
-          - TMPDIR="$XDG_RUNTIME_DIR/app/$FLATPAK_ID" zypak-wrapper /app/opt/Surfshark/surfshark
-            "$@"
+          - WAYLAND_SOCKET=${WAYLAND_DISPLAY:-"wayland-0"}
+          - if [[ -e "${XDG_RUNTIME_DIR}/${WAYLAND_SOCKET}" || -e "${WAYLAND_DISPLAY}" ]]; then EXTRA_ARGS="--enable-features=WaylandWindowDecorations --ozone-platform-hint=auto --enable-wayland-ime --wayland-text-input-version=3"; fi
+          - TMPDIR="$XDG_RUNTIME_DIR/app/$FLATPAK_ID" zypak-wrapper /app/opt/Surfshark/surfshark $EXTRA_ARGS "$@"
       - type: file
         path: com.surfshark.Surfshark.metainfo.xml
 #
