@@ -9,6 +9,11 @@ sdk: org.gnome.Sdk
 command: surfshark
 separate-locales: false
 finish-args:
+  # To support older Flatpak releases, specify both x11 and fallback-x11. The fallback-x11 option takes precedence when both are supported.
+  # https://docs.flatpak.org/en/latest/flatpak-command-reference.html
+  # HOWEVER fails linting because of finish-args-contains-both-x11-and-fallback rule https://docs.flathub.org/docs/for-app-authors/linter
+  # thus commented out. App is not ready for default support of wayland yet
+  # - --socket=fallback-x11
   - --socket=x11
   - --share=ipc
   - --share=network
@@ -119,8 +124,9 @@ modules:
       - type: script
         dest-filename: surfshark
         commands:
-          - TMPDIR="$XDG_RUNTIME_DIR/app/$FLATPAK_ID" zypak-wrapper /app/opt/Surfshark/surfshark
-            "$@"
+          - WAYLAND_SOCKET=${WAYLAND_DISPLAY:-"wayland-0"}
+          - if [[ -e "${XDG_RUNTIME_DIR}/${WAYLAND_SOCKET}" || -e "${WAYLAND_DISPLAY}" ]]; then EXTRA_ARGS="--enable-features=WaylandWindowDecorations --ozone-platform-hint=auto --enable-wayland-ime --wayland-text-input-version=3"; fi
+          - TMPDIR="$XDG_RUNTIME_DIR/app/$FLATPAK_ID" zypak-wrapper /app/opt/Surfshark/surfshark $EXTRA_ARGS "$@"
       - type: file
         path: com.surfshark.Surfshark.metainfo.xml
 #
@@ -128,8 +134,8 @@ modules:
         dest-filename: surfshark.deb
         only-arches:
           - x86_64
-        url: https://ocean.surfshark.com/debian/pool/main/s/surfshark_3.0.5_amd64.deb
-        sha256: 56f77da9afb1042f4554ca4846d4356695360524f27e8ea276d45903044928a5
+        url: https://ocean.surfshark.com/debian/pool/main/s/surfshark_3.1.1_amd64.deb
+        sha256: e3420d612f8cc6ae2ba8999a1521cb84f30caa0337148f10c0627e50c8f3b242
         x-checker-data:
           type: anitya
           project-id: 372017
@@ -139,8 +145,8 @@ modules:
         dest-filename: surfshark.deb
         only-arches:
           - aarch64
-        url: https://ocean.surfshark.com/debian/pool/main/s/surfshark_3.0.5_arm64.deb
-        sha256: f37207489fdd4c96a042ed131e5c6cb292efa36afb340e3358dc19de125feade
+        url: https://ocean.surfshark.com/debian/pool/main/s/surfshark_3.1.1_arm64.deb
+        sha256: a714d566164e552cf87bd64e52820978b5a9d062c4b16f5a472c5ba29cf209e1
         x-checker-data:
           type: anitya
           project-id: 372017
