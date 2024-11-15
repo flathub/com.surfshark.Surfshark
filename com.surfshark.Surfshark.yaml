@@ -125,8 +125,11 @@ modules:
         dest-filename: surfshark
         commands:
           - WAYLAND_SOCKET=${WAYLAND_DISPLAY:-"wayland-0"}
-          - if [[ -e "${XDG_RUNTIME_DIR}/${WAYLAND_SOCKET}" || -e "${WAYLAND_DISPLAY}" ]]; then EXTRA_ARGS="--enable-features=WaylandWindowDecorations --ozone-platform-hint=auto --enable-wayland-ime --wayland-text-input-version=3"; fi
-          - TMPDIR="$XDG_RUNTIME_DIR/app/$FLATPAK_ID" zypak-wrapper /app/opt/Surfshark/surfshark $EXTRA_ARGS "$@"
+          - if [[ -e "${XDG_RUNTIME_DIR}/${WAYLAND_SOCKET}" || -e "${WAYLAND_DISPLAY}"
+            ]]; then EXTRA_ARGS="--enable-features=WaylandWindowDecorations --ozone-platform-hint=auto
+            --enable-wayland-ime --wayland-text-input-version=3"; fi
+          - TMPDIR="$XDG_RUNTIME_DIR/app/$FLATPAK_ID" zypak-wrapper /app/opt/Surfshark/surfshark
+            $EXTRA_ARGS "$@"
       - type: file
         path: com.surfshark.Surfshark.metainfo.xml
 #
@@ -134,8 +137,8 @@ modules:
         dest-filename: surfshark.deb
         only-arches:
           - x86_64
-        url: https://ocean.surfshark.com/debian/pool/main/s/surfshark_3.1.1_amd64.deb
-        sha256: e3420d612f8cc6ae2ba8999a1521cb84f30caa0337148f10c0627e50c8f3b242
+        url: https://ocean.surfshark.com/debian/pool/main/s/surfshark_3.1.2_amd64.deb
+        sha256: 4e7bcd65351865102ab7776bef56838355ce06a8d395c913533f501f881fcce4
         x-checker-data:
           type: anitya
           project-id: 372017
@@ -145,8 +148,8 @@ modules:
         dest-filename: surfshark.deb
         only-arches:
           - aarch64
-        url: https://ocean.surfshark.com/debian/pool/main/s/surfshark_3.1.1_arm64.deb
-        sha256: a714d566164e552cf87bd64e52820978b5a9d062c4b16f5a472c5ba29cf209e1
+        url: https://ocean.surfshark.com/debian/pool/main/s/surfshark_3.1.2_arm64.deb
+        sha256: 3948b2fadba679e4f861c1b51bd0826037c7cf1717c480a9ce325d2ce260f33a
         x-checker-data:
           type: anitya
           project-id: 372017
