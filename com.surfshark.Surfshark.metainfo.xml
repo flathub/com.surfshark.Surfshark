@@ -57,7 +57,6 @@
     </description>
     <categories>
         <category>Utility</category>
-        <category>Internet</category>
     </categories>
     <launchable type="desktop-id">com.surfshark.Surfshark.desktop</launchable>
     <branding>
