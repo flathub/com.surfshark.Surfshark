@@ -137,8 +137,8 @@ modules:
         dest-filename: surfshark.deb
         only-arches:
           - x86_64
-        url: https://ocean.surfshark.com/debian/pool/main/s/surfshark_3.3.0_amd64.deb
-        sha256: 7253d604927fc89163a3ea476b6453dc33a63dae4cb634b7deffeb7628dd534a
+        url: https://ocean.surfshark.com/debian/pool/main/s/surfshark_3.4.0_amd64.deb
+        sha256: 61063e3fd688a68e14b3f622bb5dc0c708ab610dfbb151bf5a59a55811630d31
         x-checker-data:
           type: anitya
           project-id: 372017
@@ -148,8 +148,8 @@ modules:
         dest-filename: surfshark.deb
         only-arches:
           - aarch64
-        url: https://ocean.surfshark.com/debian/pool/main/s/surfshark_3.3.0_arm64.deb
-        sha256: 3e9c942be23388ed385359ce9a74c5d661d89ab3ddd7c23bb3e30abaee5859a5
+        url: https://ocean.surfshark.com/debian/pool/main/s/surfshark_3.4.0_arm64.deb
+        sha256: b23ce1c2d657534b078ee26d89a28d0bf29c58bc7dbaad1d55eba2130f969d0c
         x-checker-data:
           type: anitya
           project-id: 372017
