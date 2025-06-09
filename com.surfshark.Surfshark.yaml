@@ -137,7 +137,7 @@ modules:
       - bsdtar -Oxf surfshark.deb 'data.tar.xz' | bsdtar -xf -
       - cp -r opt $FLATPAK_DEST
       - cp -r usr/* $FLATPAK_DEST
-      - cp -r var $FLATPAK_DEST
+      - cp -r etc $FLATPAK_DEST
       - install -Dm0755 surfshark $FLATPAK_DEST/bin/
       - install -D com.surfshark.Surfshark.metainfo.xml "${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.metainfo.xml"
       - install -D "usr/share/icons/hicolor/512x512/apps/surfshark.png" "${FLATPAK_DEST}/share/icons/hicolor/512x512/apps/${FLATPAK_ID}.png"
