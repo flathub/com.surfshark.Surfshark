@@ -14,6 +14,7 @@ finish-args:
   # HOWEVER fails linting because of finish-args-contains-both-x11-and-fallback rule https://docs.flathub.org/docs/for-app-authors/linter
   # thus commented out. App is not ready for default support of wayland yet
   # - --socket=fallback-x11
+  - --device=dri
   - --socket=x11
   - --share=ipc
   - --share=network
