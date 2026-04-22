@@ -2,9 +2,9 @@
 
 app-id: com.surfshark.Surfshark
 runtime: org.gnome.Platform
-runtime-version: '48'
+runtime-version: '49'
 base: org.electronjs.Electron2.BaseApp
-base-version: '24.08'
+base-version: '25.08'
 sdk: org.gnome.Sdk
 command: surfshark
 separate-locales: false
