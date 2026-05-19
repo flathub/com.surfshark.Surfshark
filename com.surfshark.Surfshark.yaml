@@ -7,6 +7,8 @@ base: org.electronjs.Electron2.BaseApp
 base-version: '25.08'
 sdk: org.gnome.Sdk
 command: surfshark
+tags:
+  - proprietary
 separate-locales: false
 finish-args:
   # To support older Flatpak releases, specify both x11 and fallback-x11. The fallback-x11 option takes precedence when both are supported.
