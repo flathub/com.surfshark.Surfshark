@@ -16,42 +16,44 @@
     <screenshots>
         <screenshot type="default">
             <caption>Surfshark interface</caption>
-            <image type="source">https://raw.githubusercontent.com/flathub/flathub/42ae054b049c92575f1161302ecb220f235c4ec7/screenshots/screenshot_main.png</image>
+            <image type="source">https://raw.githubusercontent.com/flathub/com.surfshark.Surfshark/8381059589634e492c5b3fe163eb1b497857d924/screenshots/screenshot_main.png</image>
         </screenshot>
         <screenshot>
             <caption>Static locations</caption>
-            <image type="source">https://raw.githubusercontent.com/flathub/flathub/42ae054b049c92575f1161302ecb220f235c4ec7/screenshots/screenshot_static_locations.png</image>
+            <image type="source">https://raw.githubusercontent.com/flathub/com.surfshark.Surfshark/8381059589634e492c5b3fe163eb1b497857d924/screenshots/screenshot_static_locations.png</image>
         </screenshot>
         <screenshot>
             <caption>Multihop locations</caption>
-            <image type="source">https://raw.githubusercontent.com/flathub/flathub/42ae054b049c92575f1161302ecb220f235c4ec7/screenshots/screenshot_multihop_locations.png</image>
+            <image type="source">https://raw.githubusercontent.com/flathub/com.surfshark.Surfshark/8381059589634e492c5b3fe163eb1b497857d924/screenshots/screenshot_multihop_locations.png</image>
         </screenshot>
     </screenshots>
     <description>
-        <p><em>Protect yourself with Surfshark VPN for Linux!</em></p>
-        <p>Surfshark VPN app will protect you on both public and home Wi-Fi. It offers a VPN with global server infrastructure, ad blocker, and double 	VPN (MultiHop) servers.</p>
-        <p>Independently audited by Deloitte, Surfshark VPN doesn't track your activity. Surfshark has 3200+ RAM-only servers with speeds of up to 10Gbit/s in over 100 countries. That guarantees that your browsing is seamless, safe, and private.</p>
-        <p><em>Secure the entire household:</em></p>
-        <p>Forget counting devices. With a single subscription, you'll get unlimited simultaneous connections. Connect &amp; protect all your devices with Surfshark VPN.</p>
-        <p><em>Safeguard your data &amp; privacy:</em></p>
+        <p><em>Protect yourself with the Surfshark VPN bundle for Linux!</em></p>
+        <p>Surfshark VPN app protects you on both public and private Wi-Fi. It offers a VPN with global server infrastructure, an integrated ad blocker, a dedicated IP option, and many features like double VPN. </p>
+        <p>Independently audited by Deloitte, Surfshark VPN doesn't track your activity and keeps it safe. Surfshark has 4,500+ RAM-only servers with speeds of at least 10 Gbps and reaching 100 Gbps in the most crowded areas.</p>
+        <p>Surfshark’s servers located in 100 countries worldwide are connected to an industry-first self-healing infrastructure Everlink that ensures even better VPN connection stability.</p>
+        <p><em>Protect the entire household:</em></p>
+        <p>Forget counting devices. With a single subscription, you'll get unlimited simultaneous connections. Connect and protect all your household devices with Surfshark VPN.</p>
+        <p><em>Secure your data and privacy:</em></p>
         <p>Your ISP can see the websites you visit and the products you look for. With a VPN and its end-to-end encryption, your browsing remains private.</p>
         <p><em>Surf with blazing speeds:</em></p>
-        <p>Surfshark offers 3200+ servers in over 100 countries. Use your favorite apps or browse websites lag-free with a secure and fast VPN connection.</p>
-        <p><em>Keep your data private, even from us:</em></p>
-        <p>Surfshark has a no-activity-logs policy, proven by audits, which ensures we don't see or collect your personal information, online activity, or location.</p>
+        <p>Surfshark offers 4,500+ servers in 100 countries. Use your favorite apps or browse websites lag-free with a secure and fast VPN connection.</p>
+        <p><em>Keep your data private:</em></p>
+        <p>Surfshark has a no-activity-logs policy, proven by audits, which ensures we don't see or collect your online activity.</p>
         <p><em>Stay safe on public Wi-Fi:</em></p>
-        <p>Public Wi-Fi is a safe space for hackers. And even more dangers might hide in these networks. A VPN connection protects your data &amp; ensures that it's safe.</p>
+        <p>Public Wi-Fi is a perfect space for hackers. And even more dangers might hide in these networks. A VPN connection protects your data and ensures that it's safe.</p>
         <p><em>Access internet without censorship:</em></p>
-        <p>Censorship might stand between you and your favorite things online. That's where a secure VPN steps in &amp; helps you regain your internet freedom.</p>
-        <p><em>Block ads &amp; trackers:</em></p>
-        <p>Websites collect info about you &amp; display ads based on your online habits. Surfshark stops those annoying ads and protects you from malware attacks.</p>
+        <p>Censorship or internet restrictions while traveling might stand between you and your favorite things online. That's where a secure VPN steps in and helps you access your home content.</p>
+        <p><em>Block ads and trackers:</em></p>
+        <p>Websites collect info about you and display ads based on your online habits. Surfshark stops those annoying ads and protects you from malware attacks.</p>
         <ul>
             <li><em>Discover more Surfshark Linux app features:</em></li>
-            <li><em>Global server network</em> - travel the world without leaving your room with more than 3200 VPN servers in over 100 countries.</li>
-            <li><em>CleanWeb</em> - block ads, trackers, malware, and phishing attempts.</li>
-            <li><em>MultiHop</em> - select two different servers to connect through simultaneously</li>
-            <li><em>Camouflage mode</em> - connect to obfuscated servers and make the VPN connection look like regular browsing.</li>
-            <li><em>24/7 customer support</em> - get help via live chat, email, or social media. You can also check our Blog and Help Center.</li>
+            <li><em>Global server network</em> — travel the world without leaving your room with more than 4,500 VPN servers in over 100 countries.</li>
+            <li><em>Clean Web</em> — block ads, trackers, malware, and pop-ups.</li>
+            <li><em>Multi Hop</em> — select two different servers to connect through simultaneously</li>
+            <li><em>Dedicated IP</em> — connect to your dedicated IP directly from your Linux devices.</li>
+            <li><em>Everlink</em> — get better IP protection with a self-healing mechanism that revives your connection by reconfiguring the VPN tunnel without disconnecting you from the VPN.</li>
+            <li><em>24/7 customer support</em> — get help via live chat, email, or social media. You can also check our Blog and Help Center.</li>
         </ul>
         <p>If you have any questions, contact us directly at <em>support@surfshark.com</em> or via live chat.</p>
     </description>
