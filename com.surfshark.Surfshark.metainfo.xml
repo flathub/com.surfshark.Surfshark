@@ -67,7 +67,13 @@
     </branding>
     <releases>
         <release version="3.12.0" date="2026-08-03">
-            <description></description>
+            <description>
+                <ul>
+                    <li>Always show autoconnection widget.</li>
+                    <li>Pass theme to web.</li>
+                    <li>Other minor updates.</li>
+                </ul>
+            </description>
         </release>
         <release version="3.11.0" date="2026-07-09">
             <description/>

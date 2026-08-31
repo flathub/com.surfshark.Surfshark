@@ -1,0 +1,51 @@
+name: Fill release notes
+on:
+  pull_request:
+    types: [opened, synchronize]
+    paths:
+      - com.surfshark.Surfshark.yaml
+      - com.surfshark.Surfshark.metainfo.xml
+  workflow_dispatch: {}
+
+# Serialize per branch so overlapping synchronize events cannot race on push.
+concurrency:
+  group: fill-release-notes-${{ github.event.pull_request.head.ref || github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  fill-release-notes:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    # Same-repo branches only (flathubbot and maintainers). Fork PRs match
+    # neither branch of this condition, so the job is skipped entirely.
+    if: github.event_name == 'workflow_dispatch' || github.event.pull_request.head.repo.full_name == github.repository
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
+        with:
+          ref: ${{ github.event.pull_request.head.ref || github.ref_name }}
+
+      - name: Fill release notes from the .deb changelog
+        run: |
+          command -v bsdtar >/dev/null || sudo apt-get install -y -qq libarchive-tools
+          bash .github/fill-release-notes.sh
+
+      - name: Push filled notes
+        env:
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+        run: |
+          if git diff --quiet; then
+            echo "Release notes already filled"
+            exit 0
+          fi
+          # Never commit straight to the default branch on manual dispatch;
+          # release notes must land through a reviewed PR.
+          if [[ "$GITHUB_EVENT_NAME" == "workflow_dispatch" \
+                && "$GITHUB_REF_NAME" == "$DEFAULT_BRANCH" ]]; then
+            echo "Refusing to push filled notes directly to the default branch" >&2
+            exit 1
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Fill release notes from the Debian changelog" com.surfshark.Surfshark.metainfo.xml
+          git push

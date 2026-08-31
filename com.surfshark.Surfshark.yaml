@@ -2,7 +2,7 @@
 
 app-id: com.surfshark.Surfshark
 runtime: org.gnome.Platform
-runtime-version: '49'
+runtime-version: '50'
 base: org.electronjs.Electron2.BaseApp
 base-version: '25.08'
 sdk: org.gnome.Sdk
