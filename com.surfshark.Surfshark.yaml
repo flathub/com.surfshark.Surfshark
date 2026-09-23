@@ -21,6 +21,7 @@ finish-args:
   - --share=ipc
   - --share=network
   - --system-talk-name=org.freedesktop.NetworkManager
+  - --system-talk-name=org.freedesktop.login1
   - --talk-name=org.freedesktop.secrets
   - --talk-name=org.kde.StatusNotifierWatcher
   - --env=XCURSOR_PATH=/run/host/user-share/icons:/run/host/share/icons
