@@ -26,9 +26,7 @@ jobs:
           ref: ${{ github.event.pull_request.head.ref || github.ref_name }}
 
       - name: Fill release notes from the .deb changelog
-        run: |
-          command -v bsdtar >/dev/null || sudo apt-get install -y -qq libarchive-tools
-          bash .github/fill-release-notes.sh
+        run: bash .github/fill-release-notes.sh
 
       - name: Push filled notes
         env:

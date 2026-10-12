@@ -14,8 +14,8 @@ else
     [[ $url ]] || { echo "No ocean.surfshark.com .deb URL found in com.surfshark.Surfshark.yaml" >&2; exit 1; }
     echo "Fetching changelog from $url" >&2
     curl -fsSL "$url" -o "$tmp/surfshark.deb"
-    bsdtar -Oxf "$tmp/surfshark.deb" data.tar.xz |
-        bsdtar -xOf - '*/doc/surfshark/changelog.gz' | gzip -dc >"$changelog"
+    ar p "$tmp/surfshark.deb" data.tar.xz |
+        tar -xJOf - --wildcards '*/doc/surfshark/changelog.gz' | gzip -dc >"$changelog"
 fi
 
 ver=$(sed -n '1s/^surfshark (\(.*\)).*/\1/p' "$changelog")

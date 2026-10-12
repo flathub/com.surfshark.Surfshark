@@ -44,8 +44,8 @@ modules:
       - /share/man
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/libsecret/0.21/libsecret-0.21.7.tar.xz
-        sha256: 6b452e4750590a2b5617adc40026f28d2f4903de15f1250e1d1c40bfd68ed55e
+        url: https://download.gnome.org/sources/libsecret/0.21/libsecret-0.21.8.2.tar.xz
+        sha256: 142948339c5b971d8f6a8c7099521f6fd319b6fe73d2694b4e6d3310ed28b6e6
         x-checker-data:
           type: gnome
           name: libsecret
@@ -165,8 +165,8 @@ modules:
         dest-filename: surfshark.deb
         only-arches:
           - x86_64
-        url: https://ocean.surfshark.com/debian/pool/main/s/surfshark_3.13.0_amd64.deb
-        sha256: 6754219b04dd31a97a7433d8d0a04780c91c3518c12166f37655fdbb0583fcc0
+        url: https://ocean.surfshark.com/debian/pool/main/s/surfshark_3.14.0_amd64.deb
+        sha256: 61e20cf567da917a038f40dc6e4a3cb0006a32cac3e212a62f8cb7fe349540b6
         x-checker-data:
           type: anitya
           project-id: 372017
@@ -176,8 +176,8 @@ modules:
         dest-filename: surfshark.deb
         only-arches:
           - aarch64
-        url: https://ocean.surfshark.com/debian/pool/main/s/surfshark_3.13.0_arm64.deb
-        sha256: c59cd1bfc2c1676171a2e88e538d13a06b435899d728af56809e581ec21edac3
+        url: https://ocean.surfshark.com/debian/pool/main/s/surfshark_3.14.0_arm64.deb
+        sha256: 8f94d761277e88953d117f16b9b742a472f852af805bc544a5e28e0d5e6b19fb
         x-checker-data:
           type: anitya
           project-id: 372017
