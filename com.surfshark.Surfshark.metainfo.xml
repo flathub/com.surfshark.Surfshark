@@ -67,7 +67,11 @@
     </branding>
     <releases>
         <release version="3.14.0" date="2026-10-08">
-            <description></description>
+            <description>
+                <ul>
+                    <li>Minor updates and improvements</li>
+                </ul>
+            </description>
         </release>
         <release version="3.13.0" date="2026-09-02">
             <description>
